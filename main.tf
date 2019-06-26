@@ -1,12 +1,16 @@
 terraform {
-  backend "atlas" {
-    name = "hashicorp-rachel/sentinel-demo"
-    address = "https://app.terraform.io"
+  backend "remote" {
+    organization = "hashicorp-rachel"
+    workspaces {
+      name = "sentinel-demo"
+    }
   }
 }
 
 provider "aws" {
   region = "us-west-2"
+  profile = "default"
+  shared_credentials_file = "~/.aws/credentials"
 }
 
 
