@@ -2,7 +2,7 @@ terraform {
   backend "remote" {
     organization = "hashicorp-rachel"
     workspaces {
-      name = "sentinel-demo"
+      name = "sentinel-demo1"
     }
   }
 }
